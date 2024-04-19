@@ -1,0 +1,88 @@
+use testdb;
+
+drop table if exists users;
+drop table if exists products;
+
+CREATE TABLE if not exists users (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  age INT NOT NULL,
+  city VARCHAR(255) NOT NULL,
+  gender VARCHAR(255) NOT NULL,
+  work_position VARCHAR(255) NOT NULL
+);
+
+INSERT INTO users (name, email, age, city, gender, work_position) VALUES
+  ('Anna Smith', 'annasmith@gmail.com', 28, 'Lviv', 'Female', 'Software Engineer'),
+  ('John Johnson', 'johnjohnson@example.com', 32, 'Kyiv', 'Male', 'Software Engineer'),
+  ('Mary Brown', 'marybrown@example.com', 24, 'Kharkiv', 'Female', 'Data Scientist'),
+  ('Michael Jones', 'michaeljones@gmail.com', 40, 'Odesa', 'Male', 'Data Scientist'),
+  ('Sarah Miller', 'sarahmiller@gmail.com', 35, 'Dnipro', 'Female', 'Marketing Manager'),
+  ('David Garcia', 'davidgarcia@example.com', 21, 'Lviv', 'Male', 'Marketing Manager'),
+  ('Jessica Moore', 'jessicamoore@example.com', 27, 'Kyiv', 'Female', 'Software Engineer'),
+  ('Robert Wilson', 'robertwilson@gmail.com', 31, 'Kharkiv', 'Male', 'Data Scientist'),
+  ('Elizabeth Walker', 'elizabethwalker@gmail.com', 23, 'Odesa', 'Female', 'Marketing Manager'),
+  ('Matthew Taylor', 'matthewtaylor@gmail.com', 38, 'Dnipro', 'Male', 'Software Engineer'),
+  ('Laura Anderson', 'lauraanderson@gmail.com', 26, 'Lviv', 'Female', 'Data Scientist'),
+  ('Thomas Jackson', 'thomasjackson@gmail.com', 42, 'Kyiv', 'Male', 'Marketing Manager'),
+  ('Barbara Martin', 'barbaramartin@gmail.com', 37, 'Kharkiv', 'Female', 'Software Engineer'),
+  ('William Lewis', 'williamlewis@gmail.com', 22, 'Odesa', 'Male', 'Data Scientist'),
+  ('Jennifer Garcia', 'jennifergarcia@example.com', 29, 'Dnipro', 'Female', 'Marketing Manager'),
+  ('Charles Clark', 'charlesclark@example.com', 33, 'Lviv', 'Male', 'Software Engineer'),
+  ('Michelle White', 'michellewhight@example.com', 25, 'Kyiv', 'Female', 'Data Scientist'),
+  ('Christopher Harris', 'christopherharris@example.com', 41, 'Kharkiv', 'Male', 'Marketing Manager'),
+  ('Amanda Thompson', 'amandathompson@example.com', 36, 'Odesa', 'Female', 'Software Engineer'),
+  ('Ryan Mitchell', 'ryanmitchell@example.com', 20, 'Dnipro', 'Male', 'Data Scientist'),
+
+  ('Anna Kovalenko', 'annakovalenko@gmail.com', 30, 'Lviv', 'Female', 'Software Engineer'),
+  ('John Doe', 'johndoe@gmail.com', 29, 'Kyiv', 'Male', 'Data Scientist'),
+  ('Maria Ivanova', 'mariaivanova@gmail.com', 25, 'Kharkiv', 'Female', 'Marketing Manager'),
+  ('Peter Petrov', 'peterpetrov@gmail.com', 32, 'Odesa', 'Male', 'Software Engineer'),
+  ('Olga Sidorenko', 'olgasidorenko@gmail.com', 38, 'Dnipro', 'Female', 'Data Scientist'),
+  ('Ivan Ivanov', 'ivanivanov@gmail.com', 22, 'Lviv', 'Male', 'Marketing Manager'),
+  ('Kateryna Pavlenko', 'katerynapavlenko@gmail.com', 27, 'Kyiv', 'Female', 'Software Engineer'),
+  ('Serhiy Kovalenko', 'serhiykovalenko@gmail.com', 34, 'Kharkiv', 'Male', 'Data Scientist'),
+  ('Yulia Tkachenko', 'yuliatkachenko@gmail.com', 24, 'Odesa', 'Female', 'Marketing Manager'),
+  ('Dmytro Bondarenko', 'dmytrobondarenko@gmail.com', 40, 'Dnipro', 'Male', 'Software Engineer');
+
+
+CREATE TABLE if not exists products (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  description TEXT NOT NULL,
+  price DECIMAL(10,2) NOT NULL,
+  company VARCHAR(255) NOT NULL
+);
+
+INSERT INTO products (name, description, price, company) VALUES
+  ('Apple iPhone 13', 'The latest smartphone from Apple.', 999.99, 'Apple'),
+  ('Samsung Galaxy S22', 'The latest flagship smartphone from Samsung.', 849.99, 'Samsung'),
+  ('Google Pixel 6 Pro', 'The latest flagship smartphone from Google.', 899.99, 'Google'),
+  ('MacBook Air M2', 'The latest MacBook Air from Apple.', 1199.99, 'Apple'),
+  ('Dell XPS 13', 'A popular ultrabook from Dell.', 999.99, 'Dell'),
+  ('Samsung Galaxy Tab S8', 'The latest flagship tablet from Samsung.', 799.99, 'Samsung'),
+  ('Microsoft Surface Pro 8', 'A popular 2-in-1 laptop from Microsoft.', 1099.99, 'Microsoft'),
+  ('Amazon Kindle Paperwhite', 'A popular e-reader from Amazon.', 139.99, 'Amazon'),
+  ('Kobo Clara HD', 'A popular e-reader from Kobo.', 129.99, 'Kobo'),
+  ('Sony WH-1000XM5', 'Popular noise-canceling headphones from Sony.', 399.99, 'Sony'),
+  ('Bose QuietComfort 45', 'Popular noise-canceling headphones from Bose.', 349.99, 'Bose'),
+  ('Apple AirPods Max', 'Popular over-ear headphones from Apple.', 549.99, 'Apple'),
+  ('Sony WF-1000XM4', 'Popular wireless earbuds from Sony.', 279.99, 'Sony'),
+  ('Apple AirPods Pro', 'Popular wireless earbuds from Apple.', 249.99, 'Apple'),
+  ('Samsung Galaxy Buds Pro', 'Popular wireless earbuds from Samsung.', 229.99, 'Samsung'),
+  ('Jabra Elite 7 Pro', 'Popular wireless earbuds from Jabra.', 199.99, 'Jabra'),
+  ('Bose QuietComfort Earbuds', 'Popular wireless earbuds from Bose.', 279.99, 'Bose'),
+  ('Beats Fit Pro', 'Popular wireless earbuds from Beats.', 199.99, 'Beats'),
+  ('Samsung Galaxy S23', 'The latest flagship smartphone from Samsung.', 949.99, 'Samsung'),
+  ('Google Pixel 7 Pro', 'The latest flagship smartphone from Google.', 999.99, 'Google'),
+  ('MacBook Pro 14', 'The latest MacBook Pro from Apple.', 1999.99, 'Apple'),
+  ('Dell XPS 15', 'A popular ultrabook from Dell.', 1499.99, 'Dell'),
+  ('Lenovo ThinkPad X1 Carbon', 'A popular business laptop from Lenovo.', 1299.99, 'Lenovo'),
+  ('iPad Air M1', 'The latest iPad Air from Apple.', 599.99, 'Apple'),
+  ('Sony WF-C700N', 'Popular wireless earbuds from Sony.', 199.99, 'Sony'),
+  ('Jabra Elite 4 Active', 'Popular wireless earbuds from Jabra.', 179.99, 'Jabra'),
+  ('Skullcandy Dime', 'Popular wireless earbuds from Skullcandy.', 29.99, 'Skullcandy'),
+  ('JBL Live Pro+ TWS', 'Popular wireless earbuds from JBL.', 179.99, 'JBL'),
+  (' Anker Soundcore Life P3', 'Popular wireless earbuds from Anker.', 89.99, 'Anker'),
+  ('Sennheiser Momentum True Wireless 2', 'Popular wireless earbuds from Sennheiser.', 299.99, 'Sennheiser');
